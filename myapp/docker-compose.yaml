@@ -1,0 +1,8 @@
+services:
+  app:
+    image: maven:3.9.10-eclipse-temurin-17
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    command: sh -c "mvn clean package && java -cp target/myapp-1.0-SNAPSHOT.jar com.example.App"
