@@ -1,0 +1,15 @@
+# Mac system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Docker logs
+*.log
+
+# Build files
+target/
+
+# Ignore everything outside project (important)
+../*
