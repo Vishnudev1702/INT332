@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,5 +16,8 @@ jobs:
       - name: Build Docker Image
         run: docker build -t my-docker-app .
 
-      - name: List Docker Images
-        run: docker images
+      - name: Run Container (Deployment Step)
+        run: docker run -d -p 5000:5000 my-docker-app
+
+      - name: Check Running Containers
+        run: docker ps
